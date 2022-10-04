@@ -1,6 +1,6 @@
 -- Lua
 require('onedark').setup {
-  style = 'warmer',
+  style = 'deep',
   term_colors = true,
   highlights = {},
   options = {
