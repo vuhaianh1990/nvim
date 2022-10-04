@@ -65,6 +65,11 @@ end)
 vim.keymap.set('n', ';e', function()
   builtin.diagnostics()
 end)
+vim.keymap.set('n', ';m', function()
+  builtin.keymaps({
+    initial_mode = "normal",
+  })
+end)
 vim.keymap.set("n", "sf", function()
   telescope.extensions.file_browser.file_browser({
     path = "%:p:h",
@@ -74,6 +79,6 @@ vim.keymap.set("n", "sf", function()
     grouped = true,
     --previewer = false,
     initial_mode = "normal",
-    --layout_config = { height = 40 }
+    --layout_config = { width = 100 }
   })
 end)
