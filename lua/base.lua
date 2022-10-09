@@ -35,7 +35,7 @@ opt.backspace = { 'start', 'eol', 'indent' }
 opt.path:append { '**' } -- Finding files - Search down into subfolders
 opt.wildignore:append { '*/node_modules/*' }
 opt.mouse = 'a'
-opt.foldmethod = 'syntax'
+opt.foldmethod = 'manual'
 -- opt.foldmethod = "expr"
 -- opt.foldexpr = "nvim_treesitter#foldexpr()"
 
