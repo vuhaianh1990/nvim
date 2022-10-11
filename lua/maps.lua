@@ -33,3 +33,6 @@ keymap.set('n', '<C-w><right>', '<C-w>>')
 keymap.set('n', '<C-w><up>', '<C-w>+')
 keymap.set('n', '<C-w><down>', '<C-w>-')
 
+-- search highlights
+keymap.set('n', '<space><space>', ':nohl<cr>')
+

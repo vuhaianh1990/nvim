@@ -38,6 +38,7 @@ opt.mouse = 'a'
 opt.foldmethod = 'manual'
 -- opt.foldmethod = "expr"
 -- opt.foldexpr = "nvim_treesitter#foldexpr()"
+-- opt.cmdheight = 0
 
 -- Undercurl
 cmd([[let &t_Cs = "\e[4:3m"]])

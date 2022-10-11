@@ -1,16 +1,48 @@
 local status, lualine = pcall(require, "lualine")
 if (not status) then return end
 
+local colors = {
+  blue   = '#80a0ff',
+  cyan   = '#79dac8',
+  black  = '#080808',
+  white  = '#c6c6c6',
+  red    = '#ff5189',
+  violet = '#d183e8',
+  grey   = '#303030',
+}
+
+local bubbles_theme = {
+  normal = {
+    a = { fg = colors.black, bg = colors.violet },
+    b = { fg = colors.white, bg = colors.grey },
+    c = { fg = colors.black, bg = colors.black },
+  },
+
+  insert = { a = { fg = colors.black, bg = colors.blue } },
+  visual = { a = { fg = colors.black, bg = colors.cyan } },
+  replace = { a = { fg = colors.black, bg = colors.red } },
+
+  inactive = {
+    a = { fg = colors.white, bg = colors.black },
+    b = { fg = colors.white, bg = colors.black },
+    c = { fg = colors.black, bg = colors.black },
+  },
+}
+
 lualine.setup {
   options = {
-    icons_enabled = true,
-    theme = 'solarized_dark',
-    section_separators = { left = '', right = '' },
-    component_separators = { left = '', right = '' },
-    disabled_filetypes = {}
+    theme = 'tokyonight',
+    component_separators = '|',
+    section_separators = { left = '', right = '' },
+
+    -- icons_enabled = true,
+    -- theme = 'tokyonight',
+    -- section_separators = { left = '', right = '' },
+    -- component_separators = { left = '', right = '' },
+    -- disabled_filetypes = {}
   },
   sections = {
-    lualine_a = { 'mode', 'tabs'},
+    lualine_a = { 'mode' },
     lualine_b = { 'branch' },
     lualine_c = { {
       'filename',
@@ -21,6 +53,7 @@ lualine.setup {
       { 'diagnostics', sources = { "nvim_diagnostic" }, symbols = { error = ' ', warn = ' ', info = ' ',
         hint = ' ' } },
       'encoding',
+      'fileformat',
       'filetype'
     },
     lualine_y = { 'progress' },

@@ -10,7 +10,7 @@ packer.startup(function(use)
   use 'wbthomason/packer.nvim'
 
   -- Theme colorscheme
-  use 'navarasu/onedark.nvim'
+  use 'folke/tokyonight.nvim'
 
   -- Plugins
   use 'nvim-lualine/lualine.nvim' -- Statusline
