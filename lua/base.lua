@@ -5,8 +5,7 @@ local g = vim.g
 local cmd = vim.cmd
 local wo = vim.wo
 
-vim.scriptencoding = 'utf-8'
-opt.encoding = 'utf-8'
+vim.scriptencoding = 'utf-8' opt.encoding = 'utf-8'
 opt.fileencoding = 'utf-8'
 
 wo.number = true
@@ -36,6 +35,8 @@ opt.path:append { '**' } -- Finding files - Search down into subfolders
 opt.wildignore:append { '*/node_modules/*' }
 opt.mouse = 'a'
 opt.foldmethod = 'manual'
+opt.cursorcolumn = true
+opt.colorcolumn= "80,120,140"
 -- opt.foldmethod = "expr"
 -- opt.foldexpr = "nvim_treesitter#foldexpr()"
 -- opt.cmdheight = 0

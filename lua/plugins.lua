@@ -57,4 +57,8 @@ packer.startup(function(use)
     },
     run = function() require'navigator'.setup() end,
   })
+
+  -- Custom plugins
+  use("petertriho/nvim-scrollbar")
+
 end)
