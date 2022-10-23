@@ -20,7 +20,8 @@ ts.setup {
     "swift",
     "css",
     "html",
-    "lua"
+    "lua",
+    "dart"
   },
   autotag = {
     enable = true,

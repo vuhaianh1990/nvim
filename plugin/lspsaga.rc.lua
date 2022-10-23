@@ -19,12 +19,12 @@ keymap('n', 'gr', '<Cmd>Lspsaga rename<CR>', opts)
 -- Code action
 keymap({"n","v"}, "<leader>ca", "<Cmd>Lspsaga code_action<CR>", opts)
 -- Outline
-keymap("n","<leader>o", "<cmd>LSoutlineToggle<CR>", opts)
+keymap("n","go", "<cmd>LSoutlineToggle<CR>", opts)
 
 -- Float terminal
 keymap("n", "<A-d>", "<cmd>Lspsaga open_floaterm<CR>", opts)
 -- if you want pass somc cli command into terminal you can do like this
 -- open lazygit in lspsaga float terminal
-keymap("n", "<A-d>", "<cmd>Lspsaga open_floaterm lazygit<CR>", opts)
+-- keymap("n", "<A-d>", "<cmd>Lspsaga open_floaterm lazygit<CR>", opts)
 -- close floaterm
 keymap("t", "<A-d>", [[<C-\><C-n><cmd>Lspsaga close_floaterm<CR>]], opts)

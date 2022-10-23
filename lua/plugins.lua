@@ -59,6 +59,7 @@ packer.startup(function(use)
   })
 
   -- Custom plugins
-  use("petertriho/nvim-scrollbar")
+  use "petertriho/nvim-scrollbar"
+  use "tpope/vim-commentary"
 
 end)
