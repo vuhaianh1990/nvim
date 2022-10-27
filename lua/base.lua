@@ -34,11 +34,11 @@ opt.backspace = { 'start', 'eol', 'indent' }
 opt.path:append { '**' } -- Finding files - Search down into subfolders
 opt.wildignore:append { '*/node_modules/*' }
 opt.mouse = 'a'
-opt.foldmethod = 'manual'
 opt.cursorcolumn = true
-opt.colorcolumn= "80,120,140"
--- opt.foldmethod = "expr"
--- opt.foldexpr = "nvim_treesitter#foldexpr()"
+opt.colorcolumn= "120"
+opt.foldmethod = 'manual'
+--opt.foldmethod = "expr"
+--opt.foldexpr = "nvim_treesitter#foldexpr()"
 -- opt.cmdheight = 0
 
 -- Undercurl

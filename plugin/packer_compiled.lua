@@ -94,6 +94,11 @@ _G.packer_plugins = {
     path = "/Users/vuanh/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
+  ["diffview.nvim"] = {
+    loaded = true,
+    path = "/Users/vuanh/.local/share/nvim/site/pack/packer/start/diffview.nvim",
+    url = "https://github.com/sindrets/diffview.nvim"
+  },
   ["git.nvim"] = {
     loaded = true,
     path = "/Users/vuanh/.local/share/nvim/site/pack/packer/start/git.nvim",
@@ -153,6 +158,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/vuanh/.local/share/nvim/site/pack/packer/start/navigator.lua",
     url = "https://github.com/ray-x/navigator.lua"
+  },
+  ["nightfox.nvim"] = {
+    loaded = true,
+    path = "/Users/vuanh/.local/share/nvim/site/pack/packer/start/nightfox.nvim",
+    url = "https://github.com/EdenEast/nightfox.nvim"
   },
   ["null-ls.nvim"] = {
     loaded = true,

@@ -11,6 +11,7 @@ packer.startup(function(use)
 
   -- Theme colorscheme
   use 'folke/tokyonight.nvim'
+  use "EdenEast/nightfox.nvim"
 
   -- Plugins
   use 'nvim-lualine/lualine.nvim' -- Statusline
@@ -25,6 +26,7 @@ packer.startup(function(use)
   use 'williamboman/mason.nvim'
   use 'williamboman/mason-lspconfig.nvim'
   use 'kdheepak/lazygit.nvim'
+  use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
   use "lukas-reineke/indent-blankline.nvim"
   use {'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons'}
 
