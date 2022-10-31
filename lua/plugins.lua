@@ -12,6 +12,7 @@ packer.startup(function(use)
   -- Theme colorscheme
   use 'folke/tokyonight.nvim'
   use "EdenEast/nightfox.nvim"
+  use ('Tsuzat/NeoSolarized.nvim')
 
   -- Plugins
   use 'nvim-lualine/lualine.nvim' -- Statusline
