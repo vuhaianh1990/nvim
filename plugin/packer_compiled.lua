@@ -79,11 +79,6 @@ _G.packer_plugins = {
     path = "/Users/vuanh/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
-  ["NeoSolarized.nvim"] = {
-    loaded = true,
-    path = "/Users/vuanh/.local/share/nvim/site/pack/packer/start/NeoSolarized.nvim",
-    url = "https://github.com/Tsuzat/NeoSolarized.nvim"
-  },
   ["bufferline.nvim"] = {
     loaded = true,
     path = "/Users/vuanh/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
@@ -98,6 +93,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/vuanh/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
+  },
+  ["dart-vim-plugin"] = {
+    loaded = true,
+    path = "/Users/vuanh/.local/share/nvim/site/pack/packer/start/dart-vim-plugin",
+    url = "https://github.com/dart-lang/dart-vim-plugin"
   },
   ["diffview.nvim"] = {
     loaded = true,
@@ -159,6 +159,11 @@ _G.packer_plugins = {
     path = "/Users/vuanh/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
+  ["move.nvim"] = {
+    loaded = true,
+    path = "/Users/vuanh/.local/share/nvim/site/pack/packer/start/move.nvim",
+    url = "https://github.com/fedepujol/move.nvim"
+  },
   ["navigator.lua"] = {
     loaded = true,
     path = "/Users/vuanh/.local/share/nvim/site/pack/packer/start/navigator.lua",
@@ -199,6 +204,11 @@ _G.packer_plugins = {
     path = "/Users/vuanh/.local/share/nvim/site/pack/packer/start/nvim-scrollbar",
     url = "https://github.com/petertriho/nvim-scrollbar"
   },
+  ["nvim-tree.lua"] = {
+    loaded = true,
+    path = "/Users/vuanh/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
+    url = "https://github.com/nvim-tree/nvim-tree.lua"
+  },
   ["nvim-treesitter"] = {
     loaded = true,
     path = "/Users/vuanh/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
@@ -213,6 +223,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/vuanh/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
+  },
+  ["oxocarbon.nvim"] = {
+    loaded = true,
+    path = "/Users/vuanh/.local/share/nvim/site/pack/packer/start/oxocarbon.nvim",
+    url = "https://github.com/nyoom-engineering/oxocarbon.nvim"
   },
   ["packer.nvim"] = {
     loaded = true,
@@ -239,15 +254,20 @@ _G.packer_plugins = {
     path = "/Users/vuanh/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
-  ["tokyonight.nvim"] = {
-    loaded = true,
-    path = "/Users/vuanh/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
-    url = "https://github.com/folke/tokyonight.nvim"
-  },
   ["vim-commentary"] = {
     loaded = true,
     path = "/Users/vuanh/.local/share/nvim/site/pack/packer/start/vim-commentary",
     url = "https://github.com/tpope/vim-commentary"
+  },
+  ["vim-lsc"] = {
+    loaded = true,
+    path = "/Users/vuanh/.local/share/nvim/site/pack/packer/start/vim-lsc",
+    url = "https://github.com/natebosch/vim-lsc"
+  },
+  ["vim-lsc-dart"] = {
+    loaded = true,
+    path = "/Users/vuanh/.local/share/nvim/site/pack/packer/start/vim-lsc-dart",
+    url = "https://github.com/natebosch/vim-lsc-dart"
   },
   ["zen-mode.nvim"] = {
     loaded = true,

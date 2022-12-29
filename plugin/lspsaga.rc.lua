@@ -28,3 +28,4 @@ keymap("n", "<A-d>", "<cmd>Lspsaga open_floaterm<CR>", opts)
 -- keymap("n", "<A-d>", "<cmd>Lspsaga open_floaterm lazygit<CR>", opts)
 -- close floaterm
 keymap("t", "<A-d>", [[<C-\><C-n><cmd>Lspsaga close_floaterm<CR>]], opts)
+

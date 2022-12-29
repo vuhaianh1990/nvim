@@ -10,9 +10,8 @@ packer.startup(function(use)
   use 'wbthomason/packer.nvim'
 
   -- Theme colorscheme
-  use 'folke/tokyonight.nvim'
+  use {'nyoom-engineering/oxocarbon.nvim'}
   use "EdenEast/nightfox.nvim"
-  use ('Tsuzat/NeoSolarized.nvim')
 
   -- Plugins
   use 'nvim-lualine/lualine.nvim' -- Statusline
@@ -64,5 +63,16 @@ packer.startup(function(use)
   -- Custom plugins
   use "petertriho/nvim-scrollbar"
   use "tpope/vim-commentary"
+  use 'dart-lang/dart-vim-plugin'
+  use 'natebosch/vim-lsc'
+  use 'natebosch/vim-lsc-dart'
+  use 'fedepujol/move.nvim'
+  use {
+    'nvim-tree/nvim-tree.lua',
+    requires = {
+      'nvim-tree/nvim-web-devicons', -- optional, for file icons
+    },
+    tag = 'nightly' -- optional, updated every week. (see issue #1193)
+  }
 
 end)
