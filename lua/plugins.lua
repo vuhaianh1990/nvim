@@ -51,28 +51,31 @@ packer.startup(function(use)
   use 'lewis6991/gitsigns.nvim'
   use 'dinhhuy258/git.nvim' -- For git blame & browse
 
-  use({
-    'ray-x/navigator.lua',
-    requires = {
-      { 'ray-x/guihua.lua', run = 'cd lua/fzy && make' },
-      { 'neovim/nvim-lspconfig' },
-    },
-    run = function() require'navigator'.setup() end,
-  })
-
   -- Custom plugins
   use "petertriho/nvim-scrollbar"
-  use "tpope/vim-commentary"
+  use { 'numToStr/Comment.nvim',
+    requires = {
+      'JoosepAlviste/nvim-ts-context-commentstring'
+    }
+  }
   use 'dart-lang/dart-vim-plugin'
-  use 'natebosch/vim-lsc'
-  use 'natebosch/vim-lsc-dart'
-  use 'fedepujol/move.nvim'
+  use 'natebosch/vim-lsc' -- dart flutter
+  use 'natebosch/vim-lsc-dart' -- dart flutter
+  use 'fedepujol/move.nvim' -- move text
   use {
     'nvim-tree/nvim-tree.lua',
     requires = {
       'nvim-tree/nvim-web-devicons', -- optional, for file icons
     },
     tag = 'nightly' -- optional, updated every week. (see issue #1193)
+  }
+  use { 'fgheng/winbar.nvim' }
+
+  -- Find and replace
+  use 'windwp/nvim-spectre'
+  use {
+    'mg979/vim-visual-multi', 
+    branch = 'master'
   }
 
 end)
