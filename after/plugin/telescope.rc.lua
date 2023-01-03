@@ -9,6 +9,7 @@ end
 
 local fb_actions = require "telescope".extensions.file_browser.actions
 
+
 telescope.setup {
   defaults = {
     mappings = {
@@ -81,7 +82,8 @@ vim.keymap.set('n', ';f',
   function()
     builtin.find_files({
       no_ignore = false,
-      hidden = true
+      hidden = true,
+      prompt_prefix = "🔍 "
     })
   end)
 vim.keymap.set('n', ';r', function()
@@ -116,3 +118,10 @@ vim.keymap.set("n", "sf", function()
     --layout_config = { width = 100 }
   })
 end)
+
+
+-- Change colorscheme
+vim.keymap.set('n', ';s', function()
+  builtin.colorscheme()
+end)
+
