@@ -13,31 +13,10 @@ packer.startup(function(use)
   use {'nyoom-engineering/oxocarbon.nvim'}
   use "EdenEast/nightfox.nvim"
 
-  -- Plugins
+  -- useins
   use 'nvim-lualine/lualine.nvim' -- Statusline
   use 'nvim-lua/plenary.nvim' -- Common utilities
   use 'onsails/lspkind-nvim' -- vscode-like pictograms
-  use 'hrsh7th/cmp-buffer' -- nvim-cmp source for buffer words
-  use 'hrsh7th/cmp-nvim-lsp' -- nvim-cmp source for neovim's built-in LSP
-  use { 'L3MON4D3/LuaSnip' }
-  use {
-    'hrsh7th/nvim-cmp',
-    config = function ()
-      require'cmp'.setup {
-      snippet = {
-        expand = function(args)
-          require'luasnip'.lsp_expand(args.body)
-        end
-      },
-
-      sources = {
-        { name = 'luasnip' },
-        -- more sources
-      },
-    }
-    end
-  }
-  use 'neovim/nvim-lspconfig' -- LSP
   use 'jose-elias-alvarez/null-ls.nvim' -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
   use 'MunifTanjim/prettier.nvim' -- Prettier plugin for Neovim's built-in LSP client
   use 'williamboman/mason.nvim'
@@ -47,7 +26,37 @@ packer.startup(function(use)
   use "lukas-reineke/indent-blankline.nvim"
   use {'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons'}
 
-  use 'glepnir/lspsaga.nvim' -- LSP UIs
+
+  use 'neovim/nvim-lspconfig'
+  use 'hrsh7th/cmp-nvim-lsp'
+  use 'hrsh7th/cmp-buffer'
+  use 'hrsh7th/cmp-path'
+  use 'hrsh7th/cmp-cmdline'
+  use 'hrsh7th/nvim-cmp'
+  use({
+      "glepnir/lspsaga.nvim",
+      branch = "main",
+      config = function()
+          require('lspsaga').setup({})
+      end,
+  })
+
+  -- For vsnip users.
+  use 'hrsh7th/cmp-vsnip'
+  use 'hrsh7th/vim-vsnip'
+
+  -- For luasnip users.
+  use 'L3MON4D3/LuaSnip'
+  use 'saadparwaiz1/cmp_luasnip'
+
+  -- For ultisnips users.
+  use 'SirVer/ultisnips'
+  use 'quangnguyen30192/cmp-nvim-ultisnips'
+
+  -- For snippy users.
+  use 'dcampos/nvim-snippy'
+  use 'dcampos/cmp-snippy'
+
   use {
     'nvim-treesitter/nvim-treesitter',
     run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
@@ -92,6 +101,17 @@ packer.startup(function(use)
   use {
     'mg979/vim-visual-multi', 
     branch = 'master'
+  }
+
+  -- NX Workspace
+  use {
+    'Equilibris/nx.nvim',
+    requires = {
+        'nvim-telescope/telescope.nvim',
+    },
+    config = function()
+        require("nx").setup {}
+    end
   }
 
 end)

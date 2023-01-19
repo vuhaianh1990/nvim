@@ -20,10 +20,19 @@ require("nvim-tree").setup({
   },
   renderer = {
     group_empty = true,
+    highlight_git = true,
+    highlight_opened_files = "all",
   },
   filters = {
-    dotfiles = true,
+    dotfiles = false,
   },
+  git = {
+    ignore = false
+  },
+  diagnostics = {
+    enable = true,
+    show_on_dirs = true,
+  }
 })
 
 -- Mapping

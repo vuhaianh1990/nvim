@@ -21,7 +21,8 @@ ts.setup {
     "css",
     "html",
     "lua",
-    "dart"
+    "dart",
+    "markdown"
   },
   autotag = {
     enable = true,
