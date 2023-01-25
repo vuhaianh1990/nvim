@@ -21,8 +21,6 @@ packer.startup(function(use)
   use 'MunifTanjim/prettier.nvim' -- Prettier plugin for Neovim's built-in LSP client
   use 'williamboman/mason.nvim'
   use 'williamboman/mason-lspconfig.nvim'
-  use 'kdheepak/lazygit.nvim'
-  use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
   use "lukas-reineke/indent-blankline.nvim"
   use {'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons'}
 
@@ -40,10 +38,6 @@ packer.startup(function(use)
           require('lspsaga').setup({})
       end,
   })
-
-  -- For vsnip users.
-  use 'hrsh7th/cmp-vsnip'
-  use 'hrsh7th/vim-vsnip'
 
   -- For luasnip users.
   use 'L3MON4D3/LuaSnip'
@@ -63,7 +57,7 @@ packer.startup(function(use)
   }
   use 'kyazdani42/nvim-web-devicons' -- File icons
   use 'nvim-telescope/telescope.nvim'
-  use 'nvim-telescope/telescope-file-browser.nvim'
+  use { "nvim-telescope/telescope-file-browser.nvim" }
   use 'windwp/nvim-autopairs'
   use 'windwp/nvim-ts-autotag'
   use 'norcalli/nvim-colorizer.lua'
@@ -73,8 +67,10 @@ packer.startup(function(use)
     run = function() vim.fn["mkdp#util#install"]() end,
   })
 
+  -- GIT
+  use 'kdheepak/lazygit.nvim'
   use 'lewis6991/gitsigns.nvim'
-  use 'dinhhuy258/git.nvim' -- For git blame & browse
+  use 'tpope/vim-fugitive'
 
   -- Custom plugins
   use "petertriho/nvim-scrollbar"
@@ -86,7 +82,6 @@ packer.startup(function(use)
   use 'dart-lang/dart-vim-plugin'
   use 'natebosch/vim-lsc' -- dart flutter
   use 'natebosch/vim-lsc-dart' -- dart flutter
-  use 'fedepujol/move.nvim' -- move text
   use {
     'nvim-tree/nvim-tree.lua',
     requires = {
@@ -95,11 +90,12 @@ packer.startup(function(use)
     tag = 'nightly' -- optional, updated every week. (see issue #1193)
   }
   use { 'fgheng/winbar.nvim' }
+  use { 'echasnovski/mini.nvim', branch = 'stable' }
 
   -- Find and replace
   use 'windwp/nvim-spectre'
   use {
-    'mg979/vim-visual-multi', 
+    'mg979/vim-visual-multi',
     branch = 'master'
   }
 

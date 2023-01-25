@@ -17,7 +17,7 @@ telescope.setup {
         ["q"] = actions.close
       },
     },
-    file_ignore_patterns = {"node_modules", ".git"},
+    file_ignore_patterns = { "node_modules", ".git" },
     preview = {
       mime_hook = function(filepath, bufnr, opts)
         local is_image = function(filepath)
@@ -33,6 +33,7 @@ telescope.setup {
               vim.api.nvim_chan_send(term, d .. "\r\n")
             end
           end
+
           vim.fn.jobstart({
             "viu",
             "-w",
@@ -124,4 +125,3 @@ end)
 vim.keymap.set('n', ';s', function()
   builtin.colorscheme()
 end)
-
