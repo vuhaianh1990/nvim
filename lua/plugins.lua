@@ -10,7 +10,7 @@ packer.startup(function(use)
   use 'wbthomason/packer.nvim'
 
   -- Theme colorscheme
-  use {'nyoom-engineering/oxocarbon.nvim'}
+  use { 'nyoom-engineering/oxocarbon.nvim' }
   use "EdenEast/nightfox.nvim"
 
   -- useins
@@ -22,7 +22,7 @@ packer.startup(function(use)
   use 'williamboman/mason.nvim'
   use 'williamboman/mason-lspconfig.nvim'
   use "lukas-reineke/indent-blankline.nvim"
-  use {'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons'}
+  use { 'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons' }
 
 
   use 'neovim/nvim-lspconfig'
@@ -32,11 +32,12 @@ packer.startup(function(use)
   use 'hrsh7th/cmp-cmdline'
   use 'hrsh7th/nvim-cmp'
   use({
-      "glepnir/lspsaga.nvim",
-      branch = "main",
-      config = function()
-          require('lspsaga').setup({})
-      end,
+    "glepnir/lspsaga.nvim",
+    branch = "main",
+    config = function()
+      require("lspsaga").setup({})
+    end,
+    requires = { { "nvim-tree/nvim-web-devicons" } }
   })
 
   -- For luasnip users.
@@ -103,10 +104,10 @@ packer.startup(function(use)
   use {
     'Equilibris/nx.nvim',
     requires = {
-        'nvim-telescope/telescope.nvim',
+      'nvim-telescope/telescope.nvim',
     },
     config = function()
-        require("nx").setup {}
+      require("nx").setup {}
     end
   }
 

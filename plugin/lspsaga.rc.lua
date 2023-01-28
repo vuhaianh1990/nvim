@@ -24,7 +24,7 @@ local keymap = vim.keymap.set
 keymap("n", "gh", "<cmd>Lspsaga lsp_finder<CR>")
 
 -- Code action
-keymap({"n","v"}, "<leader>ca", "<cmd>Lspsaga code_action<CR>")
+keymap({ "n", "v" }, "<leader>ca", "<cmd>Lspsaga code_action<CR>")
 
 -- Rename
 keymap("n", "gr", "<cmd>Lspsaga rename<CR>")
@@ -36,7 +36,7 @@ keymap("n", "gr", "<cmd>Lspsaga rename<CR>")
 keymap("n", "gp", "<cmd>Lspsaga peek_definition<CR>")
 
 -- Go to Definition
-keymap("n","gd", "<cmd>Lspsaga goto_definition<CR>")
+keymap("n", "gd", "<cmd>Lspsaga goto_definition<CR>")
 
 -- Show line diagnostics you can pass arugment ++unfocus to make
 -- show_line_diagnsotic float window unfocus
@@ -62,7 +62,7 @@ keymap("n", "]E", function()
 end)
 
 -- Toglle Outline
-keymap("n","<leader>o", "<cmd>Lspsaga outline<CR>")
+keymap("n", "<leader>o", "<cmd>Lspsaga outline<CR>")
 
 -- Hover Doc
 keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>")
@@ -72,5 +72,4 @@ keymap("n", "<Leader>ci", "<cmd>Lspsaga incoming_calls<CR>")
 keymap("n", "<Leader>co", "<cmd>Lspsaga outgoing_calls<CR>")
 
 -- Float terminal
-keymap({"n", "t"}, "<A-d>", "<cmd>Lspsaga term_toggle<CR>")
-
+keymap({ "n", "t" }, "<A-d>", "<cmd>Lspsaga term_toggle<CR>")
