@@ -7,7 +7,7 @@ local protocol = require('vim.lsp.protocol')
 
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
-local opts = { noremap=true, silent=true }
+local opts = { noremap = true, silent = true }
 vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
@@ -21,7 +21,7 @@ local on_attach = function(client, bufnr)
 
   -- Mappings.
   -- See `:help vim.lsp.*` for documentation on any of the below functions
-  local bufopts = { noremap=true, silent=true, buffer=bufnr }
+  local bufopts = { noremap = true, silent = true, buffer = bufnr }
   vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
   -- vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts) // lsp saga rewrite
   -- vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts) // lsp saga rewrite
@@ -43,21 +43,21 @@ local lsp_flags = {
   -- This is the default in Nvim 0.7+
   debounce_text_changes = 150,
 }
-require('lspconfig')['pyright'].setup{
-    on_attach = on_attach,
-    flags = lsp_flags,
+require('lspconfig')['pyright'].setup {
+  on_attach = on_attach,
+  flags = lsp_flags,
 }
-require('lspconfig')['tsserver'].setup{
-    on_attach = on_attach,
-    flags = lsp_flags,
+require('lspconfig')['tsserver'].setup {
+  on_attach = on_attach,
+  flags = lsp_flags,
 }
-require('lspconfig')['rust_analyzer'].setup{
-    on_attach = on_attach,
-    flags = lsp_flags,
-    -- Server-specific settings...
-    settings = {
-      ["rust-analyzer"] = {}
-    }
+require('lspconfig')['rust_analyzer'].setup {
+  on_attach = on_attach,
+  flags = lsp_flags,
+  -- Server-specific settings...
+  settings = {
+    ["rust-analyzer"] = {}
+  }
 }
 
 protocol.CompletionItemKind = {
@@ -109,7 +109,7 @@ nvim_lsp.sourcekit.setup {
   on_attach = on_attach,
 }
 
-nvim_lsp.sumneko_lua.setup {
+nvim_lsp.lua_ls.setup {
   on_attach = on_attach,
   settings = {
     Lua = {
