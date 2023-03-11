@@ -77,9 +77,12 @@ packer.startup(function(use)
 
 	-- Custom plugins
 	use("petertriho/nvim-scrollbar")
-	use({ "numToStr/Comment.nvim", requires = {
-		"JoosepAlviste/nvim-ts-context-commentstring",
-	} })
+	use({
+		"numToStr/Comment.nvim",
+		requires = {
+			"JoosepAlviste/nvim-ts-context-commentstring",
+		},
+	})
 	use("dart-lang/dart-vim-plugin")
 	use("natebosch/vim-lsc") -- dart flutter
 	use("natebosch/vim-lsc-dart") -- dart flutter
@@ -91,7 +94,7 @@ packer.startup(function(use)
 		tag = "nightly", -- optional, updated every week. (see issue #1193)
 	})
 	use({ "fgheng/winbar.nvim" })
-	use({ "echasnovski/mini.nvim", branch = "stable" })
+	use("echasnovski/mini.nvim")
 
 	-- Find and replace
 	use("windwp/nvim-spectre")
@@ -102,15 +105,4 @@ packer.startup(function(use)
 
 	-- File Explore
 	use("kevinhwang91/rnvimr")
-
-	-- NX Workspace
-	use({
-		"Equilibris/nx.nvim",
-		requires = {
-			"nvim-telescope/telescope.nvim",
-		},
-		config = function()
-			require("nx").setup({})
-		end,
-	})
 end)
