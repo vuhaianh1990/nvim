@@ -134,6 +134,11 @@ _G.packer_plugins = {
     path = "/Users/vuanh/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
   },
+  ["guihua.lua"] = {
+    loaded = true,
+    path = "/Users/vuanh/.local/share/nvim/site/pack/packer/start/guihua.lua",
+    url = "https://github.com/ray-x/guihua.lua"
+  },
   ["indent-blankline.nvim"] = {
     loaded = true,
     path = "/Users/vuanh/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
@@ -174,6 +179,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/vuanh/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
+  },
+  ["material.nvim"] = {
+    loaded = true,
+    path = "/Users/vuanh/.local/share/nvim/site/pack/packer/start/material.nvim",
+    url = "https://github.com/marko-cerovac/material.nvim"
   },
   ["mini.nvim"] = {
     loaded = true,
@@ -220,11 +230,6 @@ _G.packer_plugins = {
     path = "/Users/vuanh/.local/share/nvim/site/pack/packer/start/nvim-snippy",
     url = "https://github.com/dcampos/nvim-snippy"
   },
-  ["nvim-spectre"] = {
-    loaded = true,
-    path = "/Users/vuanh/.local/share/nvim/site/pack/packer/start/nvim-spectre",
-    url = "https://github.com/windwp/nvim-spectre"
-  },
   ["nvim-tree.lua"] = {
     loaded = true,
     path = "/Users/vuanh/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
@@ -269,6 +274,12 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/vuanh/.local/share/nvim/site/pack/packer/start/rnvimr",
     url = "https://github.com/kevinhwang91/rnvimr"
+  },
+  ["sad.nvim"] = {
+    config = { "\27LJ\2\n5\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\bsad\frequire\0" },
+    loaded = true,
+    path = "/Users/vuanh/.local/share/nvim/site/pack/packer/start/sad.nvim",
+    url = "https://github.com/ray-x/sad.nvim"
   },
   ["telescope-file-browser.nvim"] = {
     loaded = true,
@@ -318,6 +329,10 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: sad.nvim
+time([[Config for sad.nvim]], true)
+try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\bsad\frequire\0", "config", "sad.nvim")
+time([[Config for sad.nvim]], false)
 -- Config for: lspsaga.nvim
 time([[Config for lspsaga.nvim]], true)
 try_loadstring("\27LJ\2\n9\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\flspsaga\frequire\0", "config", "lspsaga.nvim")

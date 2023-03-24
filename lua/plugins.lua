@@ -11,6 +11,7 @@ packer.startup(function(use)
 
 	-- Theme colorscheme
 	use("EdenEast/nightfox.nvim")
+	use("marko-cerovac/material.nvim")
 
 	-- useins
 	use("nvim-lualine/lualine.nvim") -- Statusline
@@ -97,10 +98,18 @@ packer.startup(function(use)
 	use("echasnovski/mini.nvim")
 
 	-- Find and replace
-	use("windwp/nvim-spectre")
 	use({
 		"mg979/vim-visual-multi",
 		branch = "master",
+	})
+
+	-- Sad
+	use({
+		"ray-x/sad.nvim",
+		requires = { "ray-x/guihua.lua", run = "cd lua/fzy && make" },
+		config = function()
+			require("sad").setup({})
+		end,
 	})
 
 	-- File Explore
