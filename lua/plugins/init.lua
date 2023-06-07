@@ -4,11 +4,11 @@ return {
   -- Theme colorscheme
   "EdenEast/nightfox.nvim",
   "marko-cerovac/material.nvim",
-  { "catppuccin/nvim", name = "catppuccin" },
+  { "catppuccin/nvim",                           name = "catppuccin" },
   -- useins
   "nvim-lualine/lualine.nvim", -- Statusline
-  "nvim-lua/plenary.nvim",     -- Common utilities
-  "onsails/lspkind-nvim",      -- vscode-like pictograms
+  "nvim-lua/plenary.nvim",    -- Common utilities
+  "onsails/lspkind-nvim",     -- vscode-like pictograms
   "MunifTanjim/prettier.nvim", -- Prettier plugin for Neovim's built-in LSP client
   "williamboman/mason.nvim",
   "williamboman/mason-lspconfig.nvim",
@@ -53,7 +53,7 @@ return {
     },
   },
   "dart-lang/dart-vim-plugin",
-  "natebosch/vim-lsc",      -- dart flutter
+  "natebosch/vim-lsc",     -- dart flutter
   "natebosch/vim-lsc-dart", -- dart flutter
   {
     "nvim-tree/nvim-tree.lua",
@@ -91,5 +91,19 @@ return {
         -- refer to the configuration section below
       })
     end,
+  },
+
+  -- ChatGPT
+  {
+    "jackMort/ChatGPT.nvim",
+    event = "VeryLazy",
+    config = function()
+      require("chatgpt").setup()
+    end,
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim",
+    },
   },
 }
