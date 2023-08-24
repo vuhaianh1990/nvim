@@ -2,9 +2,8 @@ return {
   "folke/which-key.nvim",
   "folke/neodev.nvim",
   -- Theme colorscheme
-  "EdenEast/nightfox.nvim",
-  "marko-cerovac/material.nvim",
-  { "catppuccin/nvim",                           name = "catppuccin" },
+  "Shatur/neovim-ayu",
+
   -- useins
   "nvim-lualine/lualine.nvim", -- Statusline
   "nvim-lua/plenary.nvim",    -- Common utilities
