@@ -8,6 +8,21 @@ return {
   },
   init = function()
     vim.opt.termguicolors = true
-    require("bufferline").setup({})
+    local bufferline = require("bufferline")
+
+    bufferline.setup({
+      options = {
+        hover = {
+          enabled = true,
+          delay = 200,
+          reveal = { "close" },
+        },
+
+        indicator = {
+          icon = "▎", -- this should be omitted if indicator style is not 'icon'
+          style = "underline",
+        },
+      },
+    })
   end,
 }

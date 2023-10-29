@@ -6,12 +6,12 @@ return {
 
   -- useins
   "nvim-lualine/lualine.nvim", -- Statusline
-  "nvim-lua/plenary.nvim",    -- Common utilities
-  "onsails/lspkind-nvim",     -- vscode-like pictograms
+  "nvim-lua/plenary.nvim",     -- Common utilities
+  "onsails/lspkind-nvim",      -- vscode-like pictograms
   "MunifTanjim/prettier.nvim", -- Prettier plugin for Neovim's built-in LSP client
   "williamboman/mason.nvim",
   "williamboman/mason-lspconfig.nvim",
-  "lukas-reineke/indent-blankline.nvim",
+  { "lukas-reineke/indent-blankline.nvim",       main = "ibl", opts = {} },
   "neovim/nvim-lspconfig",
   "hrsh7th/cmp-nvim-lsp",
   "hrsh7th/cmp-buffer",
@@ -52,7 +52,7 @@ return {
     },
   },
   "dart-lang/dart-vim-plugin",
-  "natebosch/vim-lsc",     -- dart flutter
+  "natebosch/vim-lsc",      -- dart flutter
   "natebosch/vim-lsc-dart", -- dart flutter
   {
     "nvim-tree/nvim-tree.lua",
