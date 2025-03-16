@@ -6,7 +6,6 @@
     "lazyvim.plugins.extras.editor.navic",
     "lazyvim.plugins.extras.formatting.prettier",
     "lazyvim.plugins.extras.lang.typescript",
-    "lazyvim.plugins.extras.ui.smear-cursor",
     "lazyvim.plugins.extras.vscode"
   ],
   "install_version": 7,
