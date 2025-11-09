@@ -1,4 +1,4 @@
 -- bootstrap lazy.nvim, LazyVim and your plugins
 require("config.lazy")
 
--- vim.opt.winbar = "%F"
+vim.opt.clipboard = "unnamedplus"
