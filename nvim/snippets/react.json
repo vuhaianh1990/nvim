@@ -1,0 +1,192 @@
+{
+  "React Component": {
+    "prefix": "grfc",
+    "body": [
+      "import React from 'react'",
+      "",
+      "export default function ${TM_FILENAME_BASE/(.*)/${1:/capitalize}/}$1() {",
+      "// #region ---------- Hook ----------",
+      "",
+      "// #region ---------- State ----------",
+      "",
+      "// #region ---------- Handler ----------",
+      "",
+      "// #region ---------- Effect ----------",
+      "",
+      "// #region ---------- Render ----------",
+      "",
+      "  return (",
+      "    <div>${TM_FILENAME_BASE/(.*)/${1:/capitalize}/}$1</div>",
+      "  )",
+      "}"
+    ],
+    "description": "Project's Custom React Component"
+  },
+  "Slice reducer": {
+    "prefix": "gen_reducer",
+    "body": [
+      "// #region - $1",
+      "$1(state, action: PayloadAction<$2>) {",
+      " ",
+      "},",
+      "// #endregion - $1"
+    ],
+    "description": "slice snippet"
+  },
+  "Slice request reducer": {
+    "prefix": "gen_request_reducer",
+    "body": [
+      "// #region - $1",
+      "$1Request(state, action: PayloadAction<$2.$1Request>) {",
+      "  state.$1Loading = true;",
+      "},",
+      "$1Success(state, { type, payload }: PayloadAction<$2.$1Response>) {",
+      "  state.errors = delErrors(state.errors, type);",
+      "  state.$1Response = payload;",
+      "  state.$1Loading = false;",
+      "},",
+      "$1Failure(state, { type, payload: msg }: PayloadAction<string$3>) {",
+      "  state.$1Loading = false;",
+      "  const itemErr = { type, msg };",
+      "  state.errors = addErrors(state.errors, itemErr);",
+      "},",
+      "// #endregion - $1"
+    ],
+    "description": "slice reducer snippet"
+  },
+  "Slice request reducer and to have meta callback": {
+    "prefix": "gen_request_reducer_callback",
+    "body": [
+      "// #region - $1",
+      "$1Request: {",
+      " reducer(state, action: PayloadAction<$2.$1Request>) {",
+      "   state.$1Loading = true;",
+      " },",
+      " prepare(payload: $2.$1Request, meta: $3, error?: $4) {",
+      "   return {",
+      "     payload,",
+      "     meta,",
+      "   };",
+      " },",
+      "},",
+      "$1Success(state, { type, payload }: PayloadAction<$2.$1Response>) {",
+      "  state.errors = delErrors(state.errors, type);",
+      "  state.$1 = payload;",
+      "  state.$1Loading = false;",
+      "},",
+      "$1Failure(state, { type, payload: msg }: PayloadAction<string$5>) {",
+      "  state.$1Loading = false;",
+      "  const itemErr = { type, msg };",
+      "  state.errors = addErrors(state.errors, itemErr);",
+      "},",
+      "// #endregion - $1"
+    ],
+    "description": "slice reducer and to have meta callback snippet"
+  },
+  "create redux saga worker": {
+    "prefix": "gen_saga",
+    "body": [
+      "// #region - $1",
+      "builder.addCase(actions.$1Request, function* ({ payload }) {",
+      "  try {",
+      "    $2",
+      "    const result = yield call(api.$1, payload);",
+      "",
+      "    yield put(actions.$1Success(result.data));",
+      "  } catch (error) {",
+      "   if (isResponseError<ErrorType>(error)) {",
+      "     yield put(actions.$1Failure(error.response?.error?.message));",
+      "   }",
+      "  } finally {",
+      "    //",
+      "  }",
+      "});  ",
+      "// #endregion - $1"
+    ],
+    "description": "project's custom redux saga worker"
+  },
+  "Create API": {
+    "prefix": "gen_api",
+    "body": [
+      "$1: async (params: MODULE.$1Request): Promise<RESPONSE<$2>> => {",
+      "  return API.post(endpoint.$3, params$4);",
+      "},"
+    ],
+    "description": "Project's  API"
+  },
+  "useEffect snippet": {
+    "prefix": "useeffectsnippet",
+    "body": [
+      "useEffect(() => {",
+      "$1",
+      "}, [])"
+    ],
+    "description": "Project's useEffect"
+  },
+  "useDispatch snippet": {
+    "prefix": "dispatchsnippet",
+    "body": [
+      "const dispatch = useDispatch()"
+    ],
+    "description": "Project's useDispatch"
+  },
+  "useSelector snippet": {
+    "prefix": "selectorsnippet",
+    "body": [
+      "const {} = useSelector$1((state) => ({}))"
+    ],
+    "description": "Project's useSelector"
+  },
+  "declare type snippet": {
+    "prefix": "pjtype",
+    "body": [
+      "// #region - $1",
+      "type $1Request = {};",
+      "type $1Response = {};",
+      "interface $1Item {}",
+      "// #endregion - $1"
+    ],
+    "description": "Declare Type"
+  },
+  "declare type tab snippet": {
+    "prefix": "pjtypetab",
+    "body": [
+      "// #region - $1",
+      "$1Loading?: boolean;",
+      "$1Response?: MODULE.$1Response;",
+      "// #endregion - $1"
+    ],
+    "description": "Declare Type for tab"
+  },
+  "state snippet": {
+    "prefix": "pjstate",
+    "body": [
+      "// #region - $1",
+      "export const $1Loading: boolean = false;",
+      "export const $1Response: MODULE.$1Response = null;",
+      "// #endregion - $1"
+    ]
+  },
+  "watcher snippet": {
+    "prefix": "pjwatcher",
+    "body": [
+      "takeLatest(actions.$1Request, sagas.$1Worker),"
+    ]
+  },
+  "code convention": {
+    "prefix": "cc:react",
+    "body": [
+      "// #region ---------- Hook ----------",
+      "",
+      "// #region ---------- State ----------",
+      "",
+      "// #region ---------- Handler ----------",
+      "",
+      "// #region ---------- Effect ----------",
+      "",
+      "// #region ---------- Render ----------",
+      ""
+    ],
+    "description": "project's component format"
+  }
+}
