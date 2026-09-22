@@ -5,6 +5,12 @@
 local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
 
+-- Install missing Neovim dependencies (run scripts/install.sh on Linux/macOS, install.ps1 on Windows)
+vim.api.nvim_create_user_command("InstallDeps", function()
+  require("deps.health").install()
+end, { desc = "Install missing Neovim dependencies" })
+keymap.set("n", "<leader>di", ":InstallDeps<CR>", { desc = "Install Neovim dependencies" })
+
 -- Select all
 keymap.set("n", "<C-a>", "gg<S-v>G")
 
