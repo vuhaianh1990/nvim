@@ -5,3 +5,6 @@
 vim.opt.wrap = true
 -- Set to false to disable auto format
 vim.g.lazyvim_eslint_auto_format = true
+
+-- Set to true to enable auto format on save
+vim.g.root_spec = { "cwd" }
