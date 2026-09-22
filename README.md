@@ -38,7 +38,10 @@ Install everything automatically in one shot:
 powershell -ExecutionPolicy Bypass -File "$env:USERPROFILE\.config\nvim\scripts\install.ps1"
 ```
 
-**From inside Neovim:** `<leader>di` or `:InstallDeps`.
+**From inside Neovim:** `<leader>di` or `:InstallDeps`. This opens a
+`:terminal` window and runs the installer there, so `sudo` can prompt for
+your password (you can still watch the progress and close the window when
+done).
 
 ## Verify
 

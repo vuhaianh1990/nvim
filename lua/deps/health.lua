@@ -181,20 +181,15 @@ end
 
 function M.install()
   local config = vim.fn.stdpath("config")
-  local cmd
-  if IS_WINDOWS then
-    cmd = config .. "/scripts/install.ps1"
-  else
-    cmd = config .. "/scripts/install.sh"
-  end
+  local script = config .. "/scripts/" .. (IS_WINDOWS and "install.ps1" or "install.sh")
 
-  if vim.fn.filereadable(cmd) ~= 1 then
-    H.error(string.format("Installer script not found: %s", cmd))
+  if vim.fn.filereadable(script) ~= 1 then
+    vim.api.nvim_echo({ { string.format("Installer script not found: %s", script), "ErrorMsg" } }, true, {})
     return
   end
 
   local choice = vim.fn.confirm(
-    "This will install missing Neovim dependencies using your system package manager. Continue?",
+    "This will install missing Neovim dependencies in a terminal window (sudo may prompt for your password). Continue?",
     "&Yes\n&No",
     1
   )
@@ -202,19 +197,30 @@ function M.install()
     return
   end
 
-  local out
+  local cmd
   if IS_WINDOWS then
-    out = vim.fn.system({ "powershell", "-NoProfile", "-ExecutionPolicy", "Bypass", "-File", cmd })
+    cmd = "powershell -NoProfile -ExecutionPolicy Bypass -File " .. vim.fn.shellescape(script)
   else
-    out = vim.fn.system({ "bash", cmd })
+    cmd = "bash " .. vim.fn.shellescape(script)
   end
 
-  vim.api.nvim_echo({ { out or "", "Normal" } }, true, {})
-  if vim.v.shell_error ~= 0 then
-    vim.api.nvim_echo({ { "Dependency install failed. See output above.", "ErrorMsg" } }, true, {})
-  else
-    vim.api.nvim_echo({ { "Dependencies installed. Re-run :checkhealth deps to verify.", "MoreMsg" } }, true, {})
-  end
+  vim.cmd("bel split")
+  vim.cmd("terminal " .. cmd)
+
+  local bufnr = vim.api.nvim_get_current_buf()
+  local group = vim.api.nvim_create_augroup("InstallDepsTerm", { clear = true })
+  vim.api.nvim_create_autocmd("TermClose", {
+    group = group,
+    buffer = bufnr,
+    callback = function()
+      if vim.v.event.status == 0 then
+        vim.api.nvim_echo({ { "Dependencies installed. Re-run :checkhealth deps to verify.", "MoreMsg" } }, true, {})
+      else
+        vim.api.nvim_echo({ { "Dependency install failed. See the terminal output above.", "ErrorMsg" } }, true, {})
+      end
+      vim.api.nvim_del_augroup_by_id(group)
+    end,
+  })
 end
 
 return M

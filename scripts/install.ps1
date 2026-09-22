@@ -1,9 +1,11 @@
-#Requires -RunAsAdministrator
+#Requires -Version 5.1
 <#
 .SYNOPSIS
   Installs dependencies required to run this Neovim (LazyVim) config on Windows.
 .DESCRIPTION
   Uses winget. Installs only what is missing. Neovim itself is included.
+  Run from an elevated ("Run as administrator") PowerShell if installers
+  require elevation; otherwise Windows will ask via UAC.
 #>
 
 $ErrorActionPreference = "Stop"
