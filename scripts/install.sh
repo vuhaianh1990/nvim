@@ -1,11 +1,40 @@
 #!/usr/bin/env bash
 set -uo pipefail
 
-DRY_RUN=0
-[[ "${1:-}" == "--dry-run" ]] && DRY_RUN=1
-
 log() { printf "\033[1;34m[install]\033[0m %s\n" "$*"; }
 warn() { printf "\033[1;33m[install]\033[0m %s\n" "$*"; }
+
+DRY_RUN=0
+SKIP_PLUGINS=0
+
+usage() {
+  cat <<'EOF'
+Usage: install.sh [options]
+
+Installs the system dependencies and Neovim plugins required by this config.
+
+Options:
+  --dry-run        Show what would be installed without changing anything.
+  --no-plugins     Install system dependencies only; skip Neovim plugin sync.
+  -h, --help       Show this help.
+EOF
+}
+
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    --dry-run) DRY_RUN=1 ;;
+    --no-plugins | --skip-plugins) SKIP_PLUGINS=1 ;;
+    -h | --help)
+      usage
+      exit 0
+      ;;
+    *)
+      warn "Unknown option: $1 (ignored)"
+      ;;
+  esac
+  shift
+done
+
 run() {
   if [[ "$DRY_RUN" -eq 1 ]]; then
     log "DRY-RUN: $*"
@@ -152,6 +181,26 @@ install_nvim() {
   esac
 }
 
+# Bootstrap lazy.nvim and install/update every plugin, headless, on any OS.
+install_plugins() {
+  if ! need nvim; then
+    warn "nvim not found; skipping Neovim plugin installation."
+    return 0
+  fi
+
+  if [[ "$DRY_RUN" -eq 1 ]]; then
+    log "DRY-RUN: nvim --headless \"+Lazy! sync\" +qa"
+    return 0
+  fi
+
+  log "Installing Neovim plugins (headless Lazy sync)..."
+  if nvim --headless "+Lazy! sync" +qa; then
+    log "Neovim plugins installed."
+  else
+    warn "Plugin sync failed. Open Neovim and run :Lazy sync to finish."
+  fi
+}
+
 main() {
   detect || exit 1
 
@@ -251,6 +300,12 @@ main() {
       install_missing docker docker
       ;;
   esac
+
+  if [[ "$SKIP_PLUGINS" -eq 1 ]]; then
+    log "Skipping Neovim plugin installation (--no-plugins)."
+  else
+    install_plugins
+  fi
 
   log "Done. Re-run :checkhealth deps inside Neovim to verify."
 }
